@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="hangfire-log.db" />
+    <None Remove="hangfire.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CronExpressionDescriptor" Version="2.44.0" />
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.8.20" />
+    <PackageReference Include="Hangfire.LiteDB" Version="0.4.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.18" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>

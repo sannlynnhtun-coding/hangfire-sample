@@ -1,6 +1,39 @@
 @HangfireSample_HostAddress = http://localhost:5053
 
-GET {{HangfireSample_HostAddress}}/weatherforecast/
+###
+POST {{HangfireSample_HostAddress}}/jobs/create
+Content-Type: application/json
+
+{
+  "jobId": "console-writer-job",
+  "message": "This is a recurring job running every minute!",
+  "cronExpression": "*/1 * * * *"
+}
+
+###
+GET {{HangfireSample_HostAddress}}/jobs/
 Accept: application/json
 
 ###
+PUT {{HangfireSample_HostAddress}}/jobs/update
+Content-Type: application/json
+
+{
+  "jobId": "console-writer-job",
+  "message": "This job has been updated to run every two minutes.",
+  "cronExpression": "*/2 * * * *"
+}
+
+###
+GET {{HangfireSample_HostAddress}}/jobs/test-cron?cronExpression=5 4 * * 0
+Accept: application/json
+
+###
+POST {{HangfireSample_HostAddress}}/jobs/stop-all
+
+###
+POST {{HangfireSample_HostAddress}}/jobs/restart-all
+
+###
+DELETE {{HangfireSample_HostAddress}}/jobs/delete/console-writer-job
+Accept: application/json

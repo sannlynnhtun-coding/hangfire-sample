@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/HangfireSample/hangfire-log.db
+/HangfireSample/hangfire.db
+/HangfireSample/hangfire-log.db
